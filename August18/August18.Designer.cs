@@ -41,7 +41,7 @@
             this.resultLv = new System.Windows.Forms.ListView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnLoad = new System.Windows.Forms.Button();
+            this.btndelete = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.programTbx = new System.Windows.Forms.TextBox();
@@ -157,15 +157,15 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btnLoad
+            // btndelete
             // 
-            this.btnLoad.Location = new System.Drawing.Point(12, 197);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(88, 23);
-            this.btnLoad.TabIndex = 13;
-            this.btnLoad.Text = "Load";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            this.btndelete.Location = new System.Drawing.Point(12, 197);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(88, 23);
+            this.btndelete.TabIndex = 13;
+            this.btndelete.Text = "Delete";
+            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnModify
             // 
@@ -201,7 +201,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.programTbx);
             this.Controls.Add(this.btnModify);
-            this.Controls.Add(this.btnLoad);
+            this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.resultLv);
@@ -238,7 +238,7 @@
         private System.Windows.Forms.ListView resultLv;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox programTbx;

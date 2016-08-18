@@ -38,6 +38,10 @@ namespace August18
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
+            string[] forms = getForms();
+            Student student = new Student(Convert.ToInt32(forms[0]), forms[1], forms[2], forms[3], Convert.ToInt32(forms[4]), forms[5]);
+            student.delete();
+
             displayStudents();
         }
 

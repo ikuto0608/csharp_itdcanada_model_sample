@@ -73,6 +73,15 @@ namespace August18
             return true;
         }
 
+        public bool delete()
+        {
+            adoConnection.Open(connectString);
+            adoRecordset.Open("delete from students where id = " + this.ID + ";", adoConnection);
+            adoConnection.Close();
+
+            return true;
+        }
+
         private bool isNew()
         {
             if (this.ID != 0)
