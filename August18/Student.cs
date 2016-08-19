@@ -10,7 +10,7 @@ namespace August18
     {
         static ADODB.Connection adoConnection = new ADODB.Connection();
         static ADODB.Recordset adoRecordset = new ADODB.Recordset();
-        static String connectString = "Provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source=C:/Users/ikuto.yata/Documents/August18.accdb";
+        static String connectString = "Provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source=../../August18.accdb";
 
         public static string[] PROPERTY_NAMES = new string[] {"ID", "FIRST NAME", "LAST NAME", "ADDRESS", "PHONE", "PROGRAM"};
 
