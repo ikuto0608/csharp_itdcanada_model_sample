@@ -45,6 +45,7 @@
             this.btnModify = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.programTbx = new System.Windows.Forms.TextBox();
+            this.btnBook = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // idTbx
@@ -193,11 +194,22 @@
             this.programTbx.Size = new System.Drawing.Size(100, 20);
             this.programTbx.TabIndex = 15;
             // 
+            // btnBook
+            // 
+            this.btnBook.Location = new System.Drawing.Point(587, 226);
+            this.btnBook.Name = "btnBook";
+            this.btnBook.Size = new System.Drawing.Size(88, 23);
+            this.btnBook.TabIndex = 17;
+            this.btnBook.Text = "Book";
+            this.btnBook.UseVisualStyleBackColor = true;
+            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
+            // 
             // August18
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 234);
+            this.ClientSize = new System.Drawing.Size(687, 257);
+            this.Controls.Add(this.btnBook);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.programTbx);
             this.Controls.Add(this.btnModify);
@@ -242,6 +254,7 @@
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox programTbx;
+        private System.Windows.Forms.Button btnBook;
     }
 }
 

@@ -13,10 +13,6 @@ namespace August18
 {
     public partial class August18 : Form
     {
-        ADODB.Connection adoConnection = new ADODB.Connection();
-        ADODB.Recordset adoRecordset = new ADODB.Recordset();
-        String connectString = "Provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source=C:/Users/ikuto.yata/Documents/August18.accdb";
-
         public August18()
         {
             InitializeComponent();
@@ -109,6 +105,12 @@ namespace August18
             forms[5] = programTbx.Text;
 
             return forms;
+        }
+
+        private void btnBook_Click(object sender, EventArgs e)
+        {
+            BookForm form = new BookForm();
+            form.Show();
         }
     }
 }
