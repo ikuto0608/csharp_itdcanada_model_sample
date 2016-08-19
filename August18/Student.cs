@@ -56,6 +56,42 @@ namespace August18
             return students;
         }
 
+        public static List<Student> where(string key, string value)
+        {
+            string keyAsColumnName = key.ToLower();
+            keyAsColumnName = key.Replace(' ', '_');
+
+            adoConnection.Open(connectString);
+
+            if (isIntKey(key))
+            {
+                adoRecordset.Open("select * from students where " + keyAsColumnName + " = " + value + ";", adoConnection);
+            }
+            else
+            {
+                adoRecordset.Open("select * from students where " + keyAsColumnName + " = '" + value + "';", adoConnection);
+            }
+
+            List<Student> students = new List<Student>();
+            while (!adoRecordset.EOF)
+            {
+                Student student = new Student(
+                    adoRecordset.Fields["id"].Value,
+                    adoRecordset.Fields["first_name"].Value,
+                    adoRecordset.Fields["last_name"].Value,
+                    adoRecordset.Fields["address"].Value,
+                    adoRecordset.Fields["phone"].Value,
+                    adoRecordset.Fields["program"].Value
+                );
+
+                students.Add(student);
+                adoRecordset.MoveNext();
+            }
+            adoConnection.Close();
+
+            return students;
+        }
+
         public bool save() {
             adoConnection.Open(connectString);
             if (isNew())
@@ -78,6 +114,15 @@ namespace August18
             adoConnection.Close();
 
             return true;
+        }
+
+        private static bool isIntKey(string key)
+        {
+            if (key == PROPERTY_NAMES[0] || key == PROPERTY_NAMES[4])
+            {
+                return true;
+            }
+            return false;
         }
 
         private bool isNew()

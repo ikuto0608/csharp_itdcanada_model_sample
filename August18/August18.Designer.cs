@@ -46,6 +46,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.programTbx = new System.Windows.Forms.TextBox();
             this.btnBook = new System.Windows.Forms.Button();
+            this.searchCbx = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.searchTbx = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // idTbx
@@ -132,7 +137,7 @@
             // 
             this.resultLv.Location = new System.Drawing.Point(211, 12);
             this.resultLv.Name = "resultLv";
-            this.resultLv.Size = new System.Drawing.Size(464, 208);
+            this.resultLv.Size = new System.Drawing.Size(510, 208);
             this.resultLv.TabIndex = 10;
             this.resultLv.UseCompatibleStateImageBehavior = false;
             this.resultLv.View = System.Windows.Forms.View.Details;
@@ -150,7 +155,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(108, 168);
+            this.btnClear.Location = new System.Drawing.Point(211, 272);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(88, 23);
             this.btnClear.TabIndex = 12;
@@ -196,7 +201,7 @@
             // 
             // btnBook
             // 
-            this.btnBook.Location = new System.Drawing.Point(587, 226);
+            this.btnBook.Location = new System.Drawing.Point(633, 272);
             this.btnBook.Name = "btnBook";
             this.btnBook.Size = new System.Drawing.Size(88, 23);
             this.btnBook.TabIndex = 17;
@@ -204,11 +209,56 @@
             this.btnBook.UseVisualStyleBackColor = true;
             this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
             // 
+            // searchCbx
+            // 
+            this.searchCbx.FormattingEnabled = true;
+            this.searchCbx.Items.AddRange(new object[] {
+            "ID",
+            "FIRST NAME",
+            "LAST NAME",
+            "ADDRESS",
+            "PHONE",
+            "PROGRAM"});
+            this.searchCbx.Location = new System.Drawing.Point(6, 19);
+            this.searchCbx.Name = "searchCbx";
+            this.searchCbx.Size = new System.Drawing.Size(79, 21);
+            this.searchCbx.TabIndex = 18;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.searchTbx);
+            this.groupBox1.Controls.Add(this.searchCbx);
+            this.groupBox1.Location = new System.Drawing.Point(15, 226);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(181, 79);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Search";
+            // 
+            // searchTbx
+            // 
+            this.searchTbx.Location = new System.Drawing.Point(96, 19);
+            this.searchTbx.Name = "searchTbx";
+            this.searchTbx.Size = new System.Drawing.Size(79, 20);
+            this.searchTbx.TabIndex = 20;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(96, 46);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(79, 23);
+            this.btnSearch.TabIndex = 21;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // August18
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 257);
+            this.ClientSize = new System.Drawing.Size(733, 313);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnBook);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.programTbx);
@@ -230,6 +280,8 @@
             this.Name = "August18";
             this.Text = "August18";
             this.Load += new System.EventHandler(this.August18_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,6 +307,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox programTbx;
         private System.Windows.Forms.Button btnBook;
+        private System.Windows.Forms.ComboBox searchCbx;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox searchTbx;
     }
 }
 

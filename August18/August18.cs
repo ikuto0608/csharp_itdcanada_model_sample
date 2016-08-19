@@ -20,7 +20,7 @@ namespace August18
 
         private void August18_Load(object sender, EventArgs e)
         {
-            displayStudents();
+            displayStudents(Student.all());
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace August18
             Student student = new Student(0, forms[1], forms[2], forms[3], Convert.ToInt32(forms[4]), forms[5]);
             student.save();
 
-            displayStudents();
+            displayStudents(Student.all());
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace August18
             Student student = new Student(Convert.ToInt32(forms[0]), forms[1], forms[2], forms[3], Convert.ToInt32(forms[4]), forms[5]);
             student.delete();
 
-            displayStudents();
+            displayStudents(Student.all());
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -47,6 +47,8 @@ namespace August18
             {
                 tbx.Clear();
             }
+
+            displayStudents(Student.all());
         }
 
         private void btnModify_Click(object sender, EventArgs e)
@@ -56,7 +58,7 @@ namespace August18
             Student student = new Student(Convert.ToInt32(forms[0]), forms[1], forms[2], forms[3], Convert.ToInt32(forms[4]), forms[5]);
             student.save();
 
-            displayStudents();
+            displayStudents(Student.all());
         }
 
         private void resultLv_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,7 +72,7 @@ namespace August18
             programTbx.Text = item.SubItems[5].Text;
         }
 
-        private void displayStudents()
+        private void displayStudents(List<Student> students)
         {
             resultLv.Clear();
 
@@ -79,7 +81,6 @@ namespace August18
                 resultLv.Columns.Add(Student.PROPERTY_NAMES[i], 80, HorizontalAlignment.Left);
             }
 
-            List<Student> students = Student.all();
             foreach (Student student in students)
             {
                 ListViewItem item = new ListViewItem(Convert.ToString(student.ID));
@@ -111,6 +112,14 @@ namespace August18
         {
             BookForm form = new BookForm();
             form.Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchKey = searchCbx.Text;
+            string searchValue = searchTbx.Text;
+
+            displayStudents(Student.where(searchKey, searchValue));
         }
     }
 }

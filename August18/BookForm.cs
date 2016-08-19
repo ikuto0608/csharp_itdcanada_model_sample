@@ -19,7 +19,7 @@ namespace August18
 
         private void BookForm_Load(object sender, EventArgs e)
         {
-            displayBooks();
+            displayBooks(Book.all());
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace August18
             Book book = new Book(0, forms[1], forms[2], Convert.ToInt32(forms[3]), forms[4], Convert.ToInt32(forms[5]), forms[6]);
             book.save();
 
-            displayBooks();
+            displayBooks(Book.all());
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace August18
             Book book = new Book(Convert.ToInt32(forms[0]), forms[1], forms[2], Convert.ToInt32(forms[3]), forms[4], Convert.ToInt32(forms[5]), forms[6]);
             book.delete();
 
-            displayBooks();
+            displayBooks(Book.all());
         }
 
         private void btnModify_Click(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace August18
             Book book = new Book(Convert.ToInt32(forms[0]), forms[1], forms[2], Convert.ToInt32(forms[3]), forms[4], Convert.ToInt32(forms[5]), forms[6]);
             book.save();
 
-            displayBooks();
+            displayBooks(Book.all());
         }
 
         private void resultLv_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace August18
             categoryTbx.Text = item.SubItems[6].Text;
         }
 
-        private void displayBooks()
+        private void displayBooks(List<Book> books)
         {
             resultLv.Clear();
 
@@ -79,7 +79,6 @@ namespace August18
                 resultLv.Columns.Add(Book.PROPERTY_NAMES[i], 80, HorizontalAlignment.Left);
             }
 
-            List<Book> books = Book.all();
             foreach (Book book in books)
             {
                 ListViewItem item = new ListViewItem(Convert.ToString(book.ID));
