@@ -37,7 +37,6 @@ namespace August18
 
             List<Student> students = new List<Student>();
 
-            int index = 0;
             while (!adoRecordset.EOF)
             {
                 Student student = new Student(
@@ -51,7 +50,6 @@ namespace August18
 
                 students.Add(student);
                 adoRecordset.MoveNext();
-                index++;
             }
             adoConnection.Close();
 

@@ -39,7 +39,6 @@ namespace August18
 
             List<Book> books = new List<Book>();
 
-            int index = 0;
             while (!adoRecordset.EOF)
             {
                 Book book = new Book(
@@ -54,7 +53,6 @@ namespace August18
 
                 books.Add(book);
                 adoRecordset.MoveNext();
-                index++;
             }
             adoConnection.Close();
 
